@@ -92,7 +92,7 @@ transform:translateY(100vh);
 
 <div class="container">
 
-<h1>Feliz Dia da Mulher ❤️</h1>
+<h1>Feliz Dia da Mulher Xuxu ❤️</h1>
 
 <p>
 Hoje é um dia especial, mas para mim qualquer dia ao seu lado
@@ -117,29 +117,53 @@ Clique aqui
 
 <script>
 
+let etapa = 0;
+
+const etapas = [
+{
+foto: "foto1.jpg",
+texto: "Desde que você entrou na minha vida tudo ficou mais bonito."
+},
+{
+foto: "foto2.jpg",
+texto: "Cada momento ao seu lado vira uma memória que eu quero guardar para sempre."
+},
+{
+foto: "foto3.jpg",
+texto: "Obrigado por existir e por caminhar comigo. Eu te amo ❤️"
+}
+];
+
 function mensagem(){
-alert("Você é a melhor parte da minha vida ❤️");
+
+const container = document.querySelector(".container");
+
+if(etapa < etapas.length){
+
+container.innerHTML = `
+<h1>Nossa História ❤️</h1>
+
+<img src="${etapas[etapa].foto}" style="
+width:350px;
+border-radius:20px;
+margin-top:30px;
+box-shadow:0 15px 30px rgba(0,0,0,0.4);
+">
+
+<p style="margin-top:30px;font-size:22px;">
+${etapas[etapa].texto}
+</p>
+
+<button onclick="mensagem()">
+Continuar
+</button>
+`;
+
+etapa++;
+
 }
 
-/* corações caindo */
-
-function criarCoracao(){
-const heart = document.createElement("div");
-heart.classList.add("heart");
-heart.innerHTML="❤";
-
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(Math.random()*20+10)+"px";
-heart.style.animationDuration=(Math.random()*3+3)+"s";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-heart.remove();
-},5000)
 }
-
-setInterval(criarCoracao,300);
 
 </script>
 
