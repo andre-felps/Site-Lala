@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<title>Para o Amor da Minha Vida ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Arial;
+background: linear-gradient(135deg,#ff758c,#ff7eb3);
+text-align:center;
+color:white;
+overflow-x:hidden;
+}
+
+.container{
+padding:60px 20px;
+}
+
+h1{
+font-size:50px;
+animation: fade 2s;
+}
+
+p{
+font-size:22px;
+max-width:700px;
+margin:auto;
+line-height:1.6;
+animation: fade 3s;
+}
+
+.fotos{
+margin-top:40px;
+}
+
+.fotos img{
+width:260px;
+margin:15px;
+border-radius:15px;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+transition:0.4s;
+}
+
+.fotos img:hover{
+transform:scale(1.1);
+}
+
+button{
+margin-top:40px;
+padding:15px 35px;
+font-size:20px;
+border:none;
+border-radius:30px;
+background:white;
+color:#ff4d6d;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#ffe5ec;
+transform:scale(1.1);
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+/* corações */
+
+.heart{
+position:fixed;
+top:-10px;
+color:white;
+animation:fall linear forwards;
+}
+
+@keyframes fall{
+to{
+transform:translateY(100vh);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Feliz Dia da Mulher ❤️</h1>
+
+<p>
+Hoje é um dia especial, mas para mim qualquer dia ao seu lado
+já é especial.  
+Eu admiro sua força, sua inteligência, seu carinho e tudo que você é.
+Obrigado por fazer minha vida mais feliz.
+</p>
+
+<button onclick="mensagem()">
+Clique aqui
+</button>
+
+<div class="fotos">
+
+<img src="foto1.jpg">
+<img src="foto2.jpg">
+<img src="foto3.jpg">
+
+</div>
+
+</div>
+
+<script>
+
+function mensagem(){
+alert("Você é a melhor parte da minha vida ❤️");
+}
+
+/* corações caindo */
+
+function criarCoracao(){
+const heart = document.createElement("div");
+heart.classList.add("heart");
+heart.innerHTML="❤";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(Math.random()*20+10)+"px";
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},5000)
+}
+
+setInterval(criarCoracao,300);
+
+</script>
+
+</body>
+</html>
